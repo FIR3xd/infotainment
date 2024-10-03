@@ -3,32 +3,42 @@ document.addEventListener('DOMContentLoaded', function () {
     let zoneTwoDisplay = document.getElementById('zoneTwo');
     let syncIconStatus = document.getElementById('syncIconStatus');
 
+
     // Definování funkcí uvnitř události, aby měly přístup k 'zoneOneDisplay' a 'zoneTwoDisplay'
     let zoneOne = 22;
     let zoneTwo = 22;
     let sync = true;
+
+    let smallFont = "22px";
+    let mediumFont = "38px";
     updateText();
     updateSync();
 
     function updateText() {
         if (zoneOne === 28) {
+            zoneOneDisplay.style.fontSize = smallFont;
             zoneOneDisplay.innerText = "HIGH";
         }
         else if (zoneOne === 16) {
+            zoneOneDisplay.style.fontSize = smallFont;
             zoneOneDisplay.innerText = "LOW";
         }
         else{
+            zoneOneDisplay.style.fontSize = mediumFont;
             zoneOneDisplay.innerText = zoneOne;
         }
 
 
         if (zoneTwo === 28) {
+            zoneTwoDisplay.style.fontSize = smallFont;
             zoneTwoDisplay.innerText = "HIGH";
         }
         else if (zoneTwo === 16) {
+            zoneTwoDisplay.style.fontSize = smallFont;
             zoneTwoDisplay.innerText = "LOW";
         }
         else{
+            zoneTwoDisplay.style.fontSize = mediumFont;
             zoneTwoDisplay.innerText = zoneTwo;
         }
 
