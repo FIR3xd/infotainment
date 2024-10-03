@@ -1,0 +1,153 @@
+:root {
+    --primary-color: #2fa147;
+    --secondary-color: #222222;
+    --tertiary-color: #171717;
+    --secondary-color-light: #333333;
+
+
+    --button-padding-vertical: 10px;
+    --button-padding-horizontal: 15px;
+    --button-border-radius: 50px;
+
+    --icon-width: 125px;
+    --icon-height: 125px;
+    --icon-border-radius: 10px;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--tertiary-color);
+    font: 14px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: white;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    height: 100px;
+    background-color: #222222;
+    padding: 0 30px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+header > div {
+    margin: 0 10px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border: solid 2px var(--secondary-color);
+}
+
+
+.quick-access {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 200px;
+    text-align: center;
+}
+
+#clock {
+    font-weight: bold;
+    font-size: 26px;
+    text-align: center;
+    width: 200px;
+}
+
+.phone-status {
+    font-size: 20px;
+    gap: 10px;
+    width: 200px;
+    text-align: center;
+}
+
+.ac-zone-control {
+    display: flex;
+    margin: 15px 30px;
+    gap: 25px;
+    font-weight: bold;
+    font-size: 38px;
+}
+.ac-zone-control .button{
+    padding: 0 30px;
+}
+.app-quick-access{
+    display: flex;
+    min-width: 250px;
+    justify-content: center;
+    gap: 25px;
+}
+
+.divide{
+    width: 2px;
+    height: var(--icon-height);
+    background-color: var(--secondary-color);
+}
+
+
+.button {
+    display: flex;
+    color: white;
+    text-decoration: none;
+    align-items: center;
+    gap: 5px;
+    font-size: 16px;
+}
+
+.button > i {
+    font-size: 18px;
+}
+
+.button.solid {
+    border-radius: 50px;
+    padding: var(--button-padding-vertical) var(--button-padding-horizontal);
+    background-color: var(--primary-color);
+    font-weight: bold;
+}
+
+.button.solid.big {
+    padding: calc(var(--button-padding-vertical) * 2) calc(var(--button-padding-horizontal) * 2);
+}
+
+
+.icon{
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: var(--icon-width);
+    height: var(--icon-height);
+    text-decoration: none;
+    color: white;
+    background-color: var(--secondary-color);
+    border-radius: var(--icon-border-radius);
+}
+.icon:active{
+    background-color: var(--secondary-color-light);
+}
+.icon > i{
+    font-size: 24px;
+}
+.icon.ac {
+    font-size: 24px;
+    justify-self: center;
+    text-transform: uppercase;
+}
+.icon.ac > div{
+    width: 40%;
+    margin: 15px auto 0;
+    height: 6px;
+    border-radius: var(--icon-border-radius);
+    background-color: var(--secondary-color-light);
+}
