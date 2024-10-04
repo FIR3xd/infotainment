@@ -1,8 +1,10 @@
 :root {
     --primary-color: #2fa147;
+    --container-color: #1b1b1b;
     --secondary-color: #222222;
-    --tertiary-color: #171717;
     --secondary-color-light: #333333;
+    --tertiary-color: #171717;
+
 
 
     --button-padding-vertical: 10px;
@@ -23,6 +25,8 @@ html, body {
 }
 
 header {
+    position: fixed;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -38,6 +42,12 @@ header > div {
     margin: 0 10px;
 }
 
+iframe{
+    padding: 90px 2.5% 0 2.5%;
+    width: 95%;
+    border: none;
+}
+
 footer {
     display: flex;
     justify-content: space-between;
@@ -50,12 +60,11 @@ footer {
     border: solid 2px var(--secondary-color);
 }
 
-
 .quick-access {
     display: flex;
     align-items: center;
     gap: 10px;
-    width: 200px;
+    width: 300px;
     text-align: center;
 }
 
@@ -69,7 +78,7 @@ footer {
 .phone-status {
     font-size: 20px;
     gap: 10px;
-    width: 200px;
+    width: 300px;
     text-align: center;
 }
 
@@ -119,7 +128,7 @@ footer {
     font-weight: bold;
 }
 .button.solid:active {
-    transform: translateY(1px);
+    transform: scale(110%);
 }
 
 .button.solid.big {

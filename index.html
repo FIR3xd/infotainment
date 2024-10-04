@@ -10,6 +10,7 @@
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <script src="scripts/clock.js"></script>
     <script src="scripts/ac-controls.js"></script>
+    <script src="scripts/screen-selection.js"></script>
 </head>
 <body>
 
@@ -26,7 +27,7 @@
         <i class="fa-solid fa-mobile"></i>
     </div>
 </header>
-
+<iframe src="pages/car.html" id="iframe"></iframe>
 <footer>
     <div class="ac-zone-control">
         <a href="#" class="button" id="minus-zone-1"><i class="fa-solid fa-minus"
@@ -40,9 +41,9 @@
             <div id="syncIconStatus"></div>
         </a>
         <div class="divide"></div>
-        <a class="icon" href="#"><i class="fa-solid fa-car"></i></a>
-        <a class="icon" href="#"><i class="fa-solid fa-radio"></i></a>
-        <a class="icon" href="#"><i class="fa-solid fa-ellipsis"></i></a>
+        <a class="icon" href="#" id="carButton"><i class="fa-solid fa-car"></i></a>
+        <a class="icon" href="#" id="radioButton"><i class="fa-solid fa-radio"></i></a>
+        <a class="icon" href="#" id="moreApps"><i class="fa-solid fa-ellipsis"></i></a>
     </div>
     <div class="ac-zone-control">
         <a href="#" class="button" id="minus-zone-2"><i class="fa-solid fa-minus"
