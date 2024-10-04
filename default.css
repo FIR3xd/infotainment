@@ -27,7 +27,7 @@ header {
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
-    height: 100px;
+    height: 70px;
     background-color: #222222;
     padding: 0 30px;
     border-bottom-right-radius: 10px;
@@ -138,7 +138,7 @@ footer {
     background-color: var(--secondary-color-light);
 }
 .icon > i{
-    font-size: 24px;
+    font-size: 48px;
 }
 .icon.ac {
     font-size: 24px;

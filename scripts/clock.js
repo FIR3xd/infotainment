@@ -10,5 +10,4 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     updateClock();
     setInterval(updateClock, 1000); // Aktualizace každou sekundu
-
 });
