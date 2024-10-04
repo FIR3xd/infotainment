@@ -80,17 +80,19 @@ footer {
     font-weight: bold;
     font-size: 38px;
 }
-.ac-zone-control .button{
+
+.ac-zone-control .button {
     padding: 0 30px;
 }
-.app-quick-access{
+
+.app-quick-access {
     display: flex;
     min-width: 250px;
     justify-content: center;
     gap: 25px;
 }
 
-.divide{
+.divide {
     width: 2px;
     height: var(--icon-height);
     background-color: var(--secondary-color);
@@ -116,13 +118,16 @@ footer {
     background-color: var(--primary-color);
     font-weight: bold;
 }
+.button.solid:active {
+    transform: translateY(1px);
+}
 
 .button.solid.big {
     padding: calc(var(--button-padding-vertical) * 2) calc(var(--button-padding-horizontal) * 2);
 }
 
 
-.icon{
+.icon {
     font-size: 16px;
     display: flex;
     flex-direction: column;
@@ -134,18 +139,22 @@ footer {
     background-color: var(--secondary-color);
     border-radius: var(--icon-border-radius);
 }
-.icon:active{
+
+.icon:active {
     background-color: var(--secondary-color-light);
 }
-.icon > i{
+
+.icon > i {
     font-size: 48px;
 }
+
 .icon.ac {
     font-size: 24px;
     justify-self: center;
     text-transform: uppercase;
 }
-.icon.ac > div{
+
+.icon.ac > div {
     width: 40%;
     margin: 15px auto 0;
     height: 6px;

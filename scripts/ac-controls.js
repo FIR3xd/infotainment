@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', function () {
     let syncIconStatus = document.getElementById('syncIconStatus');
 
 
-    // Definování funkcí uvnitř události, aby měly přístup k 'zoneOneDisplay' a 'zoneTwoDisplay'
     let zoneOne = 22;
     let zoneTwo = 22;
     let sync = true;
@@ -15,37 +14,44 @@ document.addEventListener('DOMContentLoaded', function () {
     updateSync();
 
     function updateText() {
-        if (zoneOne === 28) {
-            zoneOneDisplay.style.fontSize = smallFont;
-            zoneOneDisplay.innerText = "HIGH";
-        }
-        else if (zoneOne === 16) {
-            zoneOneDisplay.style.fontSize = smallFont;
-            zoneOneDisplay.innerText = "LOW";
-        }
-        else{
-            zoneOneDisplay.style.fontSize = mediumFont;
-            zoneOneDisplay.innerText = zoneOne;
-        }
-
-
-        if (zoneTwo === 28) {
-            zoneTwoDisplay.style.fontSize = smallFont;
-            zoneTwoDisplay.innerText = "HIGH";
-        }
-        else if (zoneTwo === 16) {
-            zoneTwoDisplay.style.fontSize = smallFont;
-            zoneTwoDisplay.innerText = "LOW";
-        }
-        else{
-            zoneTwoDisplay.style.fontSize = mediumFont;
-            zoneTwoDisplay.innerText = zoneTwo;
+        switch (zoneOne) {
+            case 28:
+                zoneOneDisplay.style.fontSize = smallFont;
+                zoneOneDisplay.innerText = "HIGH";
+                break;
+            case 16:
+                zoneOneDisplay.style.fontSize = smallFont;
+                zoneOneDisplay.innerText = "LOW";
+                break;
+            case 0:
+                zoneOneDisplay.style.fontSize = smallFont;
+                zoneOneDisplay.innerText = "OFF";
+                break;
+            default:
+                zoneOneDisplay.style.fontSize = mediumFont;
+                zoneOneDisplay.innerText = zoneOne;
+                break;
         }
 
 
-
-
-
+        switch (zoneTwo) {
+            case 28:
+                zoneTwoDisplay.style.fontSize = smallFont;
+                zoneTwoDisplay.innerText = "HIGH";
+                break;
+            case 16:
+                zoneTwoDisplay.style.fontSize = smallFont;
+                zoneTwoDisplay.innerText = "LOW";
+                break;
+            case 0:
+                zoneTwoDisplay.style.fontSize = smallFont;
+                zoneTwoDisplay.innerText = "OFF";
+                break;
+            default:
+                zoneTwoDisplay.style.fontSize = mediumFont;
+                zoneTwoDisplay.innerText = zoneTwo;
+                break;
+        }
     }
 
     function updateSync() {
@@ -69,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     function addTempZoneOne() {
-        if ( zoneOne !== 28) {
+        if (zoneOne !== 28) {
             zoneOne++
         }
         if (sync === true) {
@@ -83,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (zoneOne !== 16) {
             zoneOne--
         }
-        if (sync === true) {
+        if (sync) {
             zoneTwo = zoneOne
         }
         updateText();
@@ -95,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (zoneTwo !== 16) {
             zoneTwo--
         }
-        if (sync === true) {
+        if (sync) {
             sync = false;
         }
         updateText();
@@ -118,7 +124,5 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('plus-zone-2').addEventListener('click', addTempZoneTwo);
     document.getElementById('minus-zone-1').addEventListener('click', removeTempZoneOne);
     document.getElementById('minus-zone-2').addEventListener('click', removeTempZoneTwo);
-
     document.getElementById('syncButton').addEventListener('click', setSync);
-
 })
