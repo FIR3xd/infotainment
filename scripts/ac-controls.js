@@ -1,15 +1,36 @@
 document.addEventListener('DOMContentLoaded', function () {
+
+    //---------------------VARIABLES---------------------//
+    const hasZoneTwo = false ; // TWO ZONE CLIMATE TOGGLE
+
+    // CLIMATE CONTROLS SCRIPT
+    //------DO NOT FUCK AROUND WITH ANYTHING OR IT WILL BRAKE------//
     let zoneOneDisplay = document.getElementById('zoneOne');
     let zoneTwoDisplay = document.getElementById('zoneTwo');
+    let zoneTwoMenu = document.getElementById('zoneTwoMenu');
     let syncIconStatus = document.getElementById('syncIconStatus');
+    let syncButton = document.getElementById('syncButton');
+    let divider = document.getElementById('divider');
+    let appAccess = document.getElementById('appAccess');
+    let fanZone = document.getElementById('fanZone');
+    let fan = document.getElementById('fan');
 
-
+    let fanSpeed = 1;
     let zoneOne = 22;
     let zoneTwo = 22;
     let sync = true;
 
     let smallFont = "22px";
     let mediumFont = "38px";
+
+    if (!hasZoneTwo) {
+        syncButton.style.display = "none";
+        zoneTwoMenu.style.display = "none";
+        appAccess.style.padding = "0 30px";
+        divider.style.display = "none";
+        fanZone.style.display = "flex";
+    }
+
     updateText();
     updateSync();
 
@@ -52,6 +73,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 zoneTwoDisplay.innerText = zoneTwo;
                 break;
         }
+
+        fan.innerText = fanSpeed;
     }
 
     function updateSync() {
@@ -96,6 +119,20 @@ document.addEventListener('DOMContentLoaded', function () {
         updateSync();
     }
 
+    function addFanSpeed() {
+        if (fanSpeed !== 10) {
+            fanSpeed++
+        }
+        updateText();
+    }
+
+    function removeFanSpeed() {
+        if (fanSpeed !== 1) {
+            fanSpeed--
+        }
+        updateText();
+    }
+
 
     function removeTempZoneTwo() {
         if (zoneTwo !== 16) {
@@ -125,4 +162,6 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('minus-zone-1').addEventListener('click', removeTempZoneOne);
     document.getElementById('minus-zone-2').addEventListener('click', removeTempZoneTwo);
     document.getElementById('syncButton').addEventListener('click', setSync);
+    document.getElementById('plus-fan').addEventListener('click', addFanSpeed);
+    document.getElementById('minus-fan').addEventListener('click', removeFanSpeed);
 })
