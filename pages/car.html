@@ -4,8 +4,25 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="../default.css">
+    <script type="module" src="../scripts/config.js"></script>
 </head>
 <body>
-<h1>Vehicle Menu</h1>
+<div style="display: flex; flex-direction: row; justify-content: space-between; width: 100%;">
+    <div>
+        <h2>Menu</h2>
+    </div>
+    <img style="width: 60%" src="../assests/car-front.png">
+</div>
+<div style="display: flex; flex-direction: row; justify-content: space-between; width: 100%;">
+    <div style="width: 50%">
+
+    </div>
+    <div style="width: 50%;text-align: center">
+        <h1 style="margin: 0" id="vehicle-name"></h1>
+        <h2 style="margin: 0; color: var(--secondary-color-light)" id="vehicle-trim"></h2>
+        <h3 style="margin: 0; color: var(--secondary-color-light)" id="engine-specs"></h3>
+        <p style="font-size: 32px; margin: 0;color: var(--secondary-color-light)" id="odometer"></p>
+    </div>
+</div>
 </body>
 </html>

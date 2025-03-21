@@ -22,5 +22,4 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('carButton').addEventListener('click', changeScreen.bind(this, "car"));
     document.getElementById('radioButton').addEventListener('click', changeScreen.bind(this, "radio"));
     document.getElementById('moreApps').addEventListener('click', changeScreen.bind(this, "more"));
-    document.getElementById('debug').addEventListener('click', changeScreen.bind(this, "debug"));
 })

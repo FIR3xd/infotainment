@@ -1,6 +1,8 @@
 //---Parameters---//
-export const vehicleBrand = "BRAND"
-export const vehicleModel = "MODEL"
+export const vehicleBrand = "EAGLE"
+export const vehicleModel = "Tourer"
+export const vehicleTrim = "Executive"
+export const odometer = 2596 //IN KM
 
 export const isElectric = false
 
@@ -34,7 +36,7 @@ export const fanSpeedLevels = 4 ; // AMOUNT OF CLIMATE FAN SPEED LEVELS
 
 
 
-//CSS CODE - DO NOT TOUCH
+//DO NOT TOUCH
 document.documentElement.style.setProperty("--primary-color", primaryColor);
 document.documentElement.style.setProperty("--container-color", containerColor);
 document.documentElement.style.setProperty("--secondary-color", secondaryColor);
@@ -44,3 +46,11 @@ document.documentElement.style.setProperty("--text-colour", textColor);
 document.documentElement.style.setProperty("--header-border-radius", headerBorderRadius);
 document.documentElement.style.setProperty("--button-border-radius", buttonBorderRadius);
 document.documentElement.style.setProperty("--icon-border-radius", iconBorderRadius);
+
+try {
+    document.getElementById("vehicle-name").innerHTML = vehicleBrand + " " + vehicleModel;
+    document.getElementById("engine-specs").innerHTML = engineDisplacement + "L " + engineName + " " + enginePower + "hp";
+    document.getElementById("vehicle-trim").innerHTML = vehicleTrim;
+    document.getElementById("odometer").innerHTML = odometer + " KM";
+}
+catch (error) {}
