@@ -4,6 +4,7 @@
     --secondary-color: #222222;
     --secondary-color-light: #333333;
     --tertiary-color: #171717;
+    --text-colour: #ffffff;
 
 
 
@@ -14,6 +15,8 @@
     --icon-width: 125px;
     --icon-height: 125px;
     --icon-border-radius: 10px;
+
+    --header-border-radius: 30px;
 }
 
 html, body {
@@ -21,7 +24,7 @@ html, body {
     padding: 0;
     background: var(--tertiary-color);
     font: 14px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: white;
+    color: var(--text-colour);
 }
 
 header {
@@ -33,9 +36,9 @@ header {
     align-items: center;
     margin: 0 auto;
     height: 70px;
-    background-color: #222222;
-    border-bottom-right-radius: 30px;
-    border-bottom-left-radius: 30px;
+    background-color: var(--secondary-color);
+    border-bottom-right-radius: var(--header-border-radius);
+    border-bottom-left-radius: var(--header-border-radius);
 }
 
 header > div {
@@ -61,7 +64,7 @@ footer {
     bottom: 0;
     width: 100%;
     min-height: 167px;
-    border: solid 2px var(--secondary-color);
+    border-top: solid 2px var(--secondary-color);
     background-color: var(--tertiary-color);
 }
 
@@ -115,7 +118,7 @@ footer {
 
 .button {
     display: flex;
-    color: white;
+    color: var(--text-colour);
     text-decoration: none;
     align-items: center;
     gap: 5px;
@@ -127,7 +130,7 @@ footer {
 }
 
 .button.solid {
-    border-radius: 50px;
+    border-radius: var(--button-border-radius);
     padding: var(--button-padding-vertical) var(--button-padding-horizontal);
     background-color: var(--primary-color);
     font-weight: bold;
@@ -145,11 +148,12 @@ footer {
     font-size: 16px;
     display: flex;
     flex-direction: column;
+    text-align: center;
     justify-content: center;
     width: var(--icon-width);
     height: var(--icon-height);
     text-decoration: none;
-    color: white;
+    color: var(--text-colour);
     background-color: var(--secondary-color);
     border-radius: var(--icon-border-radius);
 }

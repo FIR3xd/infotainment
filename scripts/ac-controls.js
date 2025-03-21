@@ -1,10 +1,11 @@
+//---------------------VARIABLES---------------------//
+import { hasZoneTwo } from "./config.js"
+import { fanSpeedLevels } from "./config.js"
+
+
+// CLIMATE CONTROLS SCRIPT
+//------DO NOT FUCK AROUND WITH ANYTHING OR IT WILL BRAKE------//
 document.addEventListener('DOMContentLoaded', function () {
-
-    //---------------------VARIABLES---------------------//
-    const hasZoneTwo = false ; // TWO ZONE CLIMATE TOGGLE
-
-    // CLIMATE CONTROLS SCRIPT
-    //------DO NOT FUCK AROUND WITH ANYTHING OR IT WILL BRAKE------//
     let zoneOneDisplay = document.getElementById('zoneOne');
     let zoneTwoDisplay = document.getElementById('zoneTwo');
     let zoneTwoMenu = document.getElementById('zoneTwoMenu');
@@ -74,7 +75,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 break;
         }
 
-        fan.innerText = fanSpeed;
+        switch (fanSpeed) {
+            case 0:
+                fan.innerText = "OFF";
+                break
+            default:
+                fan.innerText = fanSpeed;
+                break
+        }
+
     }
 
     function updateSync() {
@@ -120,14 +129,14 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function addFanSpeed() {
-        if (fanSpeed !== 10) {
+        if (fanSpeed !== fanSpeedLevels) {
             fanSpeed++
         }
         updateText();
     }
 
     function removeFanSpeed() {
-        if (fanSpeed !== 1) {
+        if (fanSpeed !== 0) {
             fanSpeed--
         }
         updateText();
