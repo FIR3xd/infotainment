@@ -4,8 +4,6 @@ export const vehicleModel = "Tourer"
 export const vehicleTrim = "Executive"
 export const odometer = 2596 //IN KM
 
-export const isElectric = false
-
 export const engineName = "TSI"
 export const enginePower = "190" //IN HP
 export const engineLayout = "I" // I, V, F, B
@@ -29,6 +27,7 @@ const iconBorderRadius = "10px" //DEFAULT IS 10px
 
 
 //---CLIMATE CONTROL---//
+export const hasScreenAc = true ; // CLIMATE TOGGLE
 export const hasZoneTwo = true ; // TWO ZONE CLIMATE TOGGLE
 export const fanSpeedLevels = 4 ; // AMOUNT OF CLIMATE FAN SPEED LEVELS
 

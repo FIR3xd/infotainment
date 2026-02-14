@@ -1,11 +1,12 @@
 //---------------------VARIABLES---------------------//
-import { hasZoneTwo } from "./config.js"
+import {hasScreenAc, hasZoneTwo} from "./config.js"
 import { fanSpeedLevels } from "./config.js"
 
 
 // CLIMATE CONTROLS SCRIPT
 //------DO NOT FUCK AROUND WITH ANYTHING OR IT WILL BRAKE------//
 document.addEventListener('DOMContentLoaded', function () {
+    let ac = document.getElementsByClassName("ac-zone-control");
     let zoneOneDisplay = document.getElementById('zoneOne');
     let zoneTwoDisplay = document.getElementById('zoneTwo');
     let zoneTwoMenu = document.getElementById('zoneTwoMenu');
@@ -23,6 +24,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let smallFont = "22px";
     let mediumFont = "38px";
+
+    if (!hasScreenAc) {
+        for(var i = 0; i < ac.length; i++){
+            ac[i].style.display = "none";
+        }
+        syncButton.style.display = "none";
+        divider.style.display = "none";
+        appAccess.style.width = "100%";
+    }
 
     if (!hasZoneTwo) {
         syncButton.style.display = "none";
